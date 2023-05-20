@@ -1,1 +1,90 @@
+Проверь правильно ли написан код и если нет исправь
 
+html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fitnes кабинет</title>
+</head>
+<body>
+<header>
+<h1>Добро пожаловать в ваш личный fitnes кабинет</h1>
+</header>
+<main>
+<button>Войти в личный кабинет</button>
+</main>
+</body>
+</html>
+
+html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fitnes кабинет</title>
+</head>
+<body>
+<header>
+<h1>Добро пожаловать в ваш личный fitnes кабинет</h1>
+</header>
+<main>
+<button id="loginBtn">Войти в личный кабинет</button>
+</main>
+
+<script>
+const loginBtn = document.getElementById('loginBtn');
+loginBtn.addEventListener('click', () => {
+window.location.href = 'login.html';
+});
+</script>
+</body>
+</html>
+
+html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Вход в личный кабинет</title>
+</head>
+<body>
+<header>
+<h1>Вход в личный кабинет</h1>
+</header>
+<main>
+<form>
+<label for="email">Логин или электронная почта:</label>
+
+<input type="text" id="email" name="email">
+
+<label for="password">Пароль:</label>
+
+<input type="password" id="password" name="password">
+
+<button type="submit">Войти</button>
+<button>Зарегистрироваться</button>
+</form>
+
+<p id="errorMessage" style="display: none; color: red;">Неправильный логин или пароль.</p>
+</main>
+
+<script>
+const form = document.querySelector('form');
+const errorMessage = document.getElementById('errorMessage');
+
+form.addEventListener('submit', (event) => {
+event.preventDefault();
+
+const email = form.elements.email.value;
+const password = form.elements.password.value;
+
+if (email === 'example@mail.com' && password === 'password') {
+window.location.href = 'dashboard.html';
+} else {
+errorMessage.style.display = 'block';
+}
+});
+</script>
+</body>
+</html>
